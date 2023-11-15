@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+
+:root {
+  --color-scissors-bg-1: hsl(39, 89%, 49%);
+  --color-scissors-bg-2: hsl(40, 84%, 53%);
+  --color-paper-bg-1: hsl(230, 89%, 62%);
+  --color-paper-bg-2: hsl(230, 89%, 65%);
+  --color-rock-bg-1: hsl(349, 71%, 52%);
+  --color-rock-bg-2: hsl(349, 70%, 56%);
+
+  --color-brand-1: hsl(229, 25%, 31%);
+  --color-brand-2: hsl(229, 64%, 46%);
+  --color-site-2: hsl(217, 16%, 45%);
+
+  --color-site-1-1: hsl(214, 47%, 23%);
+  --color-site-1-2: hsl(237, 49%, 15%);
+
+  --font-barlow: "Barlow Semi Condensed", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-barlow);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+main {
+  padding: 3rem 2rem;
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(
+    circle,
+    var(--color-site-1-1),
+    var(--color-site-1-2)
+  );
+  position: relative;
+}
+
+.Head {
+  max-width: 50rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 3px solid var(--color-site-2);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+.Head-Logo {
+  display: block;
+  width: 10rem;
+}
+
+.Head-Logo > img {
+  width: 100%;
+}
+
+.Head-Btn {
+  background-color: hsl(0, 0%, 100%);
+  padding: 0.8rem;
+  border: none;
+  outline: none;
+  font-size: 1.6rem;
+  border-radius: 0.5rem;
+}
+
+.Head-Btn > span {
+  text-transform: uppercase;
+  display: block;
+  font-weight: 700;
+  color: var(--color-brand-2);
+}
+
+.Head-Btn > strong {
+  display: block;
+  font-size: 3.5rem;
+  color: var(--color-brand-1);
+}

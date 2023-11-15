@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+
+:root {
+  --color-scissors-bg-1: hsl(39, 89%, 49%);
+  --color-scissors-bg-2: hsl(40, 84%, 53%);
+  --color-paper-bg-1: hsl(230, 89%, 62%);
+  --color-paper-bg-2: hsl(230, 89%, 65%);
+  --color-rock-bg-1: hsl(349, 71%, 52%);
+  --color-rock-bg-2: hsl(349, 70%, 56%);
+
+  --color-brand-1: hsl(229, 25%, 31%);
+  --color-brand-2: hsl(229, 64%, 46%);
+  --color-site-2: hsl(217, 16%, 45%);
+
+  --color-site-1-1: hsl(214, 47%, 23%);
+  --color-site-1-2: hsl(237, 49%, 15%);
+
+  --font-barlow: "Barlow Semi Condensed", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-barlow);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.GameBox {
+  max-width: 40rem;
+  padding-top: 6rem;
+  text-align: center;
+  margin: auto;
+}
+
+.GameBox-Game {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  margin-bottom: 5rem;
+  background: url("../assets/bg-triangle.svg");
+  background-position: bottom -2rem center;
+  background-size: 90% 90%;
+  background-repeat: no-repeat;
+}
+
+.GameBox-Game-ImgWrapper {
+  width: 15rem;
+  height: 15rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  padding: 1.8rem;
+  cursor: pointer;
+}
+
+.GameBox-Game-ImgWrapper.scissors {
+  margin-left: auto;
+}
+
+.GameBox-Game-ImgWrapper.rock {
+  transform: translateX(60%);
+  background-color: var(--color-rock-bg-2);
+  box-shadow: inset 0 -5px 0 1px var(--color-rock-bg-1);
+}
+
+.GameBox-Game-ImgWrapper.paper {
+  background-color: var(--color-paper-bg-2);
+  box-shadow: inset 0 -5px 0 1px var(--color-paper-bg-1);
+}
+
+.GameBox-Game-ImgWrapper.scissors {
+  background-color: var(--color-scissors-bg-2);
+  box-shadow: inset 0 -5px 0 1px var(--color-scissors-bg-1);
+}
+
+.GameBox-Game-ImgWrapper-ImgBox {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: inset 0px 4px 0px 1px hsl(0, 1%, 76%);
+  pointer-events: none;
+}
+
+.GameBox-Rules {
+  text-transform: uppercase;
+  border: 3px solid var(--color-site-2);
+  padding: 1rem 2rem;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  font-size: 1.6rem;
+  color: hsl(0, 0%, 100%);
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+}
+
+.GameBox-Result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 8rem;
+  margin-bottom: 5rem;
+  position: relative;
+}
+
+.GameBox-Result-Para {
+  font-size: 1.6rem;
+  color: hsl(0, 0%, 100%);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.GameBox-Result .GameBox-Game-ImgWrapper {
+  transform: none;
+}
+
+.GameBox-Result .GameBox-Game-ImgWrapper.win {
+  box-shadow: 0 8px 0px 30px hsla(0, 0%, 100%, 0.07),
+    0 8px 0px 60px hsla(0, 0%, 100%, 0.07),
+    0 8px 0px 100px hsla(0, 0%, 100%, 0.07);
+}
+
+.GameBox-Result-PlayBox {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.GameBox-Result-PlayBox-Para {
+  display: block;
+  color: hsl(0, 0%, 100%);
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.GameBox-Result-PlayBox-Btn {
+  background-color: hsl(0, 0%, 100%);
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  color: var(--color-brand-1);
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+}
+
+.GameBox-Result-PlayBox-Btn:hover {
+  color: red;
+}
+
+@media screen and (min-width: 768px) {
+  .GameBox-Game-ImgWrapper.rock {
+    transform: translateX(85%);
+  }
+
+  .GameBox-Result .GameBox-Game-ImgWrapper {
+    transform: none;
+  }
+
+  .GameBox-Rules {
+    position: absolute;
+    bottom: 2rem;
+    right: 3rem;
+  }
+}
