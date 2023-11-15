@@ -110,7 +110,16 @@ function Game({ setScore, setShowRules }) {
               }
             >
               <div className="GameBox-Game-ImgWrapper-ImgBox">
-                <img src={`/src/assets/icon-${housePick}.svg`} alt="" />
+                <img
+                  src={
+                    housePick == "paper"
+                      ? Paper
+                      : housePick == "rock"
+                      ? Rock
+                      : Scissors
+                  }
+                  alt=""
+                />
               </div>
             </div>
           </div>
